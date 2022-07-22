@@ -1,0 +1,14 @@
+mysql> delete from address_book where first_name = 'Litu';
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from address_book;
++------------+-----------+---------+----------+-------------------+--------+--------------+------------------+
+| first_name | last_name | address | city     | state             | zip    | phone_number | email            |
++------------+-----------+---------+----------+-------------------+--------+--------------+------------------+
+| Shubom     | Nath      | Solung  | Pasighat | Arunachal pradesh | 791102 |      8288894 | shubom@gmail.com |
+| Jyoti      | Nath      | Solung  | Pasighat | Arunachal pradesh | 791102 |      8974085 | jyoti@gmail.com  |
+| Supali     | Nath      | Borbil  | Digboi   | Assam             | 758423 |      8974085 | supali@gmail.com |
++------------+-----------+---------+----------+-------------------+--------+--------------+------------------+
+3 rows in set (0.00 sec)
+
+mysql>

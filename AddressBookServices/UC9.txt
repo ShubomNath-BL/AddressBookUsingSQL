@@ -1,0 +1,54 @@
+mysql>  insert into address_book (first_name, last_name, address, city, state, zip, phone_number, email) values
+    -> ('Bhanu', 'Chanda', 'Mebu', 'Pasighat', 'Arunachal pradesh', 791102, 8584252, 'bhanu@gmail.com');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from address_book;
++------------+-----------+---------+----------+-------------------+--------+--------------+------------------+
+| first_name | last_name | address | city     | state             | zip    | phone_number | email            |
++------------+-----------+---------+----------+-------------------+--------+--------------+------------------+
+| Shubom     | Nath      | Solung  | Pasighat | Arunachal pradesh | 791102 |      8288894 | shubom@gmail.com |
+| Jyoti      | Nath      | Solung  | Pasighat | Arunachal pradesh | 791102 |      8974085 | jyoti@gmail.com  |
+| Supali     | Nath      | Borbil  | Digboi   | Assam             | 758423 |      8974085 | supali@gmail.com |
+| Bhanu      | Chanda    | Mebu    | Pasighat | Arunachal pradesh | 791102 |      8584252 | bhanu@gmail.com  |
++------------+-----------+---------+----------+-------------------+--------+--------------+------------------+
+4 rows in set (0.00 sec)
+
+mysql> alter table address_book add type varchar(100) after last_name;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from address_book;
++------------+-----------+------+---------+----------+-------------------+--------+--------------+------------------+
+| first_name | last_name | type | address | city     | state             | zip    | phone_number | email            |
++------------+-----------+------+---------+----------+-------------------+--------+--------------+------------------+
+| Shubom     | Nath      | NULL | Solung  | Pasighat | Arunachal pradesh | 791102 |      8288894 | shubom@gmail.com |
+| Jyoti      | Nath      | NULL | Solung  | Pasighat | Arunachal pradesh | 791102 |      8974085 | jyoti@gmail.com  |
+| Supali     | Nath      | NULL | Borbil  | Digboi   | Assam             | 758423 |      8974085 | supali@gmail.com |
+| Bhanu      | Chanda    | NULL | Mebu    | Pasighat | Arunachal pradesh | 791102 |      8584252 | bhanu@gmail.com  |
++------------+-----------+------+---------+----------+-------------------+--------+--------------+------------------+
+4 rows in set (0.00 sec)
+
+mysql> update address_book set type = 'Professitional' where first_name = 'Shubom';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update address_book set type = 'Friend' where first_name = 'Bhanu';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update address_book set type = 'Family' where first_name = 'Jyoti' or first_name = 'Supali';
+Query OK, 2 rows affected (0.01 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select * from address_book;
++------------+-----------+----------------+---------+----------+-------------------+--------+--------------+------------------+
+| first_name | last_name | type           | address | city     | state             | zip    | phone_number | email            |
++------------+-----------+----------------+---------+----------+-------------------+--------+--------------+------------------+
+| Shubom     | Nath      | Professitional | Solung  | Pasighat | Arunachal pradesh | 791102 |      8288894 | shubom@gmail.com |
+| Jyoti      | Nath      | Family         | Solung  | Pasighat | Arunachal pradesh | 791102 |      8974085 | jyoti@gmail.com  |
+| Supali     | Nath      | Family         | Borbil  | Digboi   | Assam             | 758423 |      8974085 | supali@gmail.com |
+| Bhanu      | Chanda    | Friend         | Mebu    | Pasighat | Arunachal pradesh | 791102 |      8584252 | bhanu@gmail.com  |
++------------+-----------+----------------+---------+----------+-------------------+--------+--------------+------------------+
+4 rows in set (0.00 sec)
+
+mysql>

@@ -1,0 +1,39 @@
+mysql> use  address_book_services
+Database changed
+mysql> select database();
++-----------------------+
+| database()            |
++-----------------------+
+| address_book_services |
++-----------------------+
+1 row in set (0.00 sec)
+
+mysql> create table address_book
+    -> (
+    -> first_name       varchar(150) NOT NULL,
+    -> last_name        varchar(100) NOT NULL,
+    -> address  varchar(150) NOT NULL,
+    -> city     varchar(150) NOT NULL,
+    -> state    varchar(100) NOT NULL,
+    -> zip      int NOT NULL,
+    -> phone_number     int NOT NULL,
+    -> email    varchar(150)
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> describe address_book;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| first_name   | varchar(150) | NO   |     | NULL    |       |
+| last_name    | varchar(100) | NO   |     | NULL    |       |
+| address      | varchar(150) | NO   |     | NULL    |       |
+| city         | varchar(150) | NO   |     | NULL    |       |
+| state        | varchar(100) | NO   |     | NULL    |       |
+| zip          | int          | NO   |     | NULL    |       |
+| phone_number | int          | NO   |     | NULL    |       |
+| email        | varchar(150) | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+8 rows in set (0.07 sec)
+
+mysql>
